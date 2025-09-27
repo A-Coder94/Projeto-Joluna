@@ -1,7 +1,7 @@
 
 /* --- CONFIGURAÇÕES GERAIS --- */
 :root {
-    --primary-color: #0a4086;
+    --primary-color: #0a52b1;
     --secondary-color: #f5b44b;
     --background-color: #f4f4f4fd;
     --text-color: #2e2e2e;
@@ -28,13 +28,13 @@ body {
 /* --- CABEÇALHO E NAVEGAÇÃO --- */
 #main-header {
     position: relative;
-    padding: 18px 9px;
+    padding: 0px 9px;
     background-image: url('img/cabecalho.jpg');
     background-size: cover;
     background-position: center;
     text-align: center;
-    opacity: 0.3;
-    transition: opacity 1s ease-in-out;
+    opacity: 0.5;
+    transition: opacity 2s ease-in-out;
 }
 
 #main-header::before {
@@ -62,11 +62,11 @@ body {
 }
 
 .brand-logo {
-    max-width: 310px;
+    max-width: 220px;
     height: auto;
-    border-radius: 95%;
+    border-radius: 100%;
     border: 0px solid var(--light-text-color);
-    opacity: 0.3;
+    opacity: 0.7;
     transition: opacity 1s ease-in-out 0.2s;
 }
 
@@ -88,13 +88,13 @@ body {
 }
 
 .header-text.left {
-    transform: translateX(-20px);
+    transform: translateX(-30px);
     transition-delay: 0.5s;
     text-align: left;
 }
 
 .header-text.right {
-    transform: translateX(20px);
+    transform: translateX(30px);
     transition-delay: 0.5s;
 }
 
