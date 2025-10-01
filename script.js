@@ -1,13 +1,13 @@
+document.addEventListener('DOMContentLoaded', function () {
 
-document.addEventListener('DOMContentLoaded', function() {
-
+    // Seleção de todos os elementos necessários
     const mainHeader = document.getElementById('main-header');
     const brandLogo = document.querySelector('.brand-logo');
-    const headerTexts = document.querySelectorAll('.header-text');
     const navLinks = document.querySelectorAll('.nav-link');
     const contentSections = document.querySelectorAll('.content-section');
-    const galleryImages = document.querySelectorAll('.gallery-item img');
-    const videoItems = document.querySelectorAll('.video-item');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    // Elementos do Overlay (Galeria)
     const overlay = document.getElementById('overlay');
     const fullImg = document.getElementById('full-img');
     const closeBtn = document.getElementById('close-btn');
@@ -15,116 +15,95 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextBtn = document.getElementById('next-btn');
 
     let currentImageIndex = 0;
+    const galleryImages = Array.from(galleryItems).map(item => item.querySelector('img'));
 
-
-
-    // Animação de entrada do cabeçalho
-    function animateHeader() {
-        if (mainHeader) mainHeader.classList.add('visible');
-        if (brandLogo) brandLogo.classList.add('visible');
-        if (headerTexts.length > 0) headerTexts.forEach(text => text.classList.add('visible'));
-    }
-
-
-
-    // Lógica para alternar entre as seções
+    // --- LÓGICA PARA TROCAR DE SEÇÃO (ABAS) ---
     function switchTab(event) {
         event.preventDefault();
         const targetId = event.currentTarget.dataset.section;
 
+        // Remove a classe 'active' de todos
         navLinks.forEach(link => link.classList.remove('active'));
         contentSections.forEach(section => section.classList.remove('active'));
-        event.currentTarget.classList.add('active');
 
+        // Adiciona 'active' ao link e à seção clicada
+        event.currentTarget.classList.add('active');
         const targetSection = document.getElementById(targetId);
+
         if (targetSection) {
             targetSection.classList.add('active');
-            const elementsToAnimate = targetSection.querySelectorAll('.section-title, .intro-text, .owner-info, .gallery-item, .partner-item, .contact-info');
-            elementsToAnimate.forEach((element, index) => {
-                setTimeout(() => element.classList.add('visible'), 100 * index);
-            });
         }
     }
 
+    // --- LÓGICA DA GALERIA DE IMAGENS ---
+    function openImage(index) {
+        if (index < 0 || index >= galleryImages.length) return;
 
+        currentImageIndex = index;
+        const img = galleryImages[currentImageIndex];
 
-    // Lógica da galeria de imagens e vídeos
-    function openImage(src, alt) {
-        fullImg.src = src;
-        fullImg.alt = alt;
-        fullImg.classList.remove('video-embed');
+        fullImg.src = img.src;
+        fullImg.alt = img.alt;
         overlay.style.display = 'flex';
-        prevBtn.style.display = 'block';
-        nextBtn.style.display = 'block';
+        document.body.style.overflow = 'hidden';
     }
 
-    function openVideo(src) {
-        fullImg.src = src;
-        fullImg.alt = 'Vídeo do YouTube';
-        fullImg.classList.add('video-embed');
-        overlay.style.display = 'flex';
-        prevBtn.style.display = 'none';
-        nextBtn.style.display = 'none';
+    function closeOverlay() {
+        overlay.style.display = 'none';
+        fullImg.src = '';
+        document.body.style.overflow = 'auto'; // Restaura o scroll
     }
-    
+
     function showNextImage() {
-        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-        openImage(galleryImages[currentImageIndex].src, galleryImages[currentImageIndex].alt);
+        const nextIndex = (currentImageIndex + 1) % galleryImages.length;
+        openImage(nextIndex);
     }
 
     function showPrevImage() {
-        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-        openImage(galleryImages[currentImageIndex].src, galleryImages[currentImageIndex].alt);
+        const prevIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+        openImage(prevIndex);
     }
 
+    // --- EVENT LISTENERS ---
 
+    // Navegação
+    navLinks.forEach(link => {
+        link.addEventListener('click', switchTab);
+    });
 
-    // Event Listeners
-    navLinks.forEach(link => link.addEventListener('click', switchTab));
+    // Galeria
     galleryImages.forEach((img, index) => {
         img.addEventListener('click', () => {
-            currentImageIndex = index;
-            openImage(img.src, img.alt);
+            openImage(index);
         });
     });
 
-
-
-    // Event listener para os itens de vídeo
-    videoItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const iframe = item.querySelector('iframe');
-            if (iframe) {
-                // Pega a URL do iframe e remove o 'autoplay=0' para reproduzir ao abrir o overlay.
-                let videoSrc = iframe.src.replace('autoplay=0', 'autoplay=1');
-                openVideo(videoSrc);
-            }
-        });
-    });
-
-    closeBtn.addEventListener('click', () => {
-        overlay.style.display = 'none';
-        fullImg.src = ''; // vídeo pare de tocar
-    });
-    
-    overlay.addEventListener('click', (event) => {
-        if (event.target === overlay) {
-            overlay.style.display = 'none';
-            fullImg.src = '';
-        }
-    });
-
+    // Controles do Overlay
+    closeBtn.addEventListener('click', closeOverlay);
     nextBtn.addEventListener('click', showNextImage);
     prevBtn.addEventListener('click', showPrevImage);
 
+    overlay.addEventListener('click', (event) => {
+        if (event.target === overlay) { // Fecha se clicar fora da imagem.
+            closeOverlay();
+        }
+    });
 
-    // Inicialização da página
-    animateHeader();
-    const homeSection = document.getElementById('home-section');
-    if (homeSection) {
-        const initialElements = homeSection.querySelectorAll('.section-title, .intro-text, .owner-info');
-        initialElements.forEach((element, index) => {
-            setTimeout(() => element.classList.add('visible'), 100 * index);
-        });
-    }
+    // Navegação pela galeria com as setas do teclado
+    document.addEventListener('keydown', (event) => {
+        if (overlay.style.display === 'flex') {
+            if (event.key === 'ArrowRight') {
+                showNextImage();
+            } else if (event.key === 'ArrowLeft') {
+                showPrevImage();
+            } else if (event.key === 'Escape') {
+                closeOverlay();
+            }
+        }
+    });
+
+    // --- INICIALIZAÇÃO ---
+
+    document.querySelector('.nav-link[data-section="home-section"]').click();
+
 });
