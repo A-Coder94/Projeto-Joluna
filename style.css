@@ -1,13 +1,12 @@
-/* --- CONFIGURAÇÕES GERAIS --- */
 :root {
     --primary-color: #0D47A1;
-    /* Azul mais escuro e sóbrio */
+   
     --secondary-color: #FFC107;
-    /* Amarelo mais vibrante */
+ 
     --background-color: #F8F9FA;
-    /* Fundo levemente acinzentado */
+
     --surface-color: #FFFFFF;
-    /* Cor para cards */
+    
     --text-color: #333;
     --light-text-color: #ffffff;
     --font-header: 'Poppins', sans-serif;
@@ -29,7 +28,7 @@ body {
     line-height: 1.8;
 }
 
-/* --- CABEÇALHO E NAVEGAÇÃO --- */
+
 #main-header {
     position: relative;
     padding: 20px 15px;
@@ -168,7 +167,7 @@ body {
     margin-right: 8px;
 }
 
-/* --- SEÇÕES DE CONTEÚDO --- */
+
 #content-area {
     padding: 40px 8%;
     max-width: 1200px;
@@ -213,7 +212,7 @@ body {
     margin-bottom: 30px;
 }
 
-/* --- SEÇÃO HOME --- */
+
 .intro-text {
     text-align: center;
     margin-bottom: 40px;
@@ -274,7 +273,7 @@ body {
 }
 
 
-/* --- SEÇÃO GALERIA --- */
+
 #image-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -333,7 +332,7 @@ body {
     transform: translate(-50%, -50%) scale(1);
 }
 
-/* --- SEÇÃO PARCEIROS --- */
+
 #partners-list {
     display: flex;
     justify-content: center;
@@ -373,7 +372,7 @@ body {
     filter: grayscale(0%);
 }
 
-/* --- SEÇÃO CONTATO --- */
+
 .contact-info {
     text-align: center;
     font-size: 1.1rem;
@@ -405,7 +404,7 @@ body {
     width: 25px;
 }
 
-/* --- FOOTER --- */
+
 footer {
     background-color: #222;
     color: #ccc;
@@ -429,7 +428,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* --- OVERLAY DA GALERIA --- */
+
 .overlay {
     position: fixed;
     top: 0;
@@ -510,7 +509,7 @@ footer a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* --- RESPONSIVIDADE --- */
+
 @media (max-width: 992px) {
     .header-text {
         font-size: 2rem;
@@ -588,7 +587,7 @@ footer a:hover {
     }
 }
 
-/* --- CÓDIGO ADICIONADO PARA AJUSTAR O LAYOUT --- */
+
 .mission-item.full-width-item {
     grid-column: 1 / -1; 
     text-align: left; 
@@ -601,3 +600,5 @@ footer a:hover {
     margin-left: auto;
     margin-right: auto;
 }
+
+
