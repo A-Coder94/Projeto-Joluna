@@ -107,3 +107,14 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.nav-link[data-section="home-section"]').click();
 
 });
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const popup = document.getElementById('meuPopup');
+        const botaoFechar = document.getElementById('fecharPopup');
+
+        // Função para fechar (esconder) o pop-up
+        botaoFechar.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+       
+    });
