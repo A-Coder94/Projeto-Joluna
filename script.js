@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentImageIndex = 0;
     const galleryImages = Array.from(galleryItems).map(item => item.querySelector('img'));
 
-    // --- LÓGICA PARA TROCAR DE SEÇÃO (ABAS) ---
+    // --- TROCAR DE SEÇÃO (ABAS) ---
     function switchTab(event) {
         event.preventDefault();
         const targetId = event.currentTarget.dataset.section;
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // --- LÓGICA DA GALERIA DE IMAGENS ---
+    // --- LÓGICA DA GALERIA ---
     function openImage(index) {
         if (index < 0 || index >= galleryImages.length) return;
 
