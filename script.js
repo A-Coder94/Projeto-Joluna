@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // --- INICIALIZAÇÃO ---
+    // --- INICIALIZAÇÃO --
 
     document.querySelector('.nav-link[data-section="home-section"]').click();
 
