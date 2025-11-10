@@ -17,16 +17,21 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentImageIndex = 0;
     const galleryImages = Array.from(galleryItems).map(item => item.querySelector('img'));
 
+    // --- ELEMENTOS DO NOVO POP-UP UNIFICADO ---
+    const popupMascote = document.getElementById('popupMascote');
+    const fecharPopupMascote = document.getElementById('fecharPopupMascote');
+
+
     // --- TROCAR DE SEÇÃO (ABAS) ---
     function switchTab(event) {
         event.preventDefault();
         const targetId = event.currentTarget.dataset.section;
 
-        // Remove a classe 'active' de todos
+
         navLinks.forEach(link => link.classList.remove('active'));
         contentSections.forEach(section => section.classList.remove('active'));
 
-        // Adiciona 'active' ao link e à seção clicada
+
         event.currentTarget.classList.add('active');
         const targetSection = document.getElementById(targetId);
 
@@ -51,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function closeOverlay() {
         overlay.style.display = 'none';
         fullImg.src = '';
-        document.body.style.overflow = 'auto'; // Restaura o scroll
+        document.body.style.overflow = 'auto';
     }
 
     function showNextImage() {
@@ -62,6 +67,13 @@ document.addEventListener('DOMContentLoaded', function () {
     function showPrevImage() {
         const prevIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
         openImage(prevIndex);
+    }
+
+    // --- LÓGICA DO MASCOTE ---
+    if (fecharPopupMascote) {
+        fecharPopupMascote.addEventListener('click', () => {
+            popupMascote.style.display = 'none';
+        });
     }
 
     // --- EVENT LISTENERS ---
@@ -84,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
     prevBtn.addEventListener('click', showPrevImage);
 
     overlay.addEventListener('click', (event) => {
-        if (event.target === overlay) { // Fecha se clicar fora da imagem.
+        if (event.target === overlay) {
             closeOverlay();
         }
     });
@@ -102,19 +114,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // --- INICIALIZAÇÃO --
+
 
     document.querySelector('.nav-link[data-section="home-section"]').click();
 
 });
-
-    document.addEventListener('DOMContentLoaded', (event) => {
-        const popup = document.getElementById('meuPopup');
-        const botaoFechar = document.getElementById('fecharPopup');
-
-        // Função para fechar (esconder) o pop-up
-        botaoFechar.addEventListener('click', () => {
-            popup.style.display = 'none';
-        });
-       
-    });
