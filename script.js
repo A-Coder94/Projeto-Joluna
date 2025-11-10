@@ -17,12 +17,17 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentImageIndex = 0;
     const galleryImages = Array.from(galleryItems).map(item => item.querySelector('img'));
 
-    // --- TROCA DE SEÇÃO (ABAS) ---
+    // --- ELEMENTOS DO NOVO POP-UP UNIFICADO ---
+    const popupMascote = document.getElementById('popupMascote');
+    const fecharPopupMascote = document.getElementById('fecharPopupMascote');
+
+
+    // --- TROCAR DE SEÇÃO (ABAS) ---
     function switchTab(event) {
         event.preventDefault();
         const targetId = event.currentTarget.dataset.section;
 
-   
+
         navLinks.forEach(link => link.classList.remove('active'));
         contentSections.forEach(section => section.classList.remove('active'));
 
@@ -35,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // ---GALERIA DE IMAGENS ---
+    // --- LÓGICA DA GALERIA ---
     function openImage(index) {
         if (index < 0 || index >= galleryImages.length) return;
 
@@ -51,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function closeOverlay() {
         overlay.style.display = 'none';
         fullImg.src = '';
-        document.body.style.overflow = 'auto'; 
+        document.body.style.overflow = 'auto';
     }
 
     function showNextImage() {
@@ -64,6 +69,14 @@ document.addEventListener('DOMContentLoaded', function () {
         openImage(prevIndex);
     }
 
+    // --- LÓGICA DO MASCOTE ---
+    if (fecharPopupMascote) {
+        fecharPopupMascote.addEventListener('click', () => {
+            popupMascote.style.display = 'none';
+        });
+    }
+
+    // --- EVENT LISTENERS ---
 
     // Navegação
     navLinks.forEach(link => {
@@ -88,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Navegação pela galeria com as setas/teclado
+    // Navegação pela galeria com as setas do teclado
     document.addEventListener('keydown', (event) => {
         if (overlay.style.display === 'flex') {
             if (event.key === 'ArrowRight') {
@@ -101,51 +114,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // --- INICIALIZAÇÃO ---
+
 
     document.querySelector('.nav-link[data-section="home-section"]').click();
 
 });
-
-document.addEventListener('DOMContentLoaded', function() {
-    const popupOverlay = document.getElementById('popup-overlay');
-    const customPopup = document.getElementById('custom-popup');
-    const closeButton = document.getElementById('close-popup');
-       
-       
-        setTimeout(() => {
-         
-            popupOverlay.style.display = 'block'; 
-
-         
-            setTimeout(() => {
-                popupOverlay.classList.add('visible');
-                customPopup.classList.add('visible');
-            }, 10);
-          
-
-        }, 3000); // 3 segundos
-    }
-
-    
-    function closePopup() {
-       
-        popupOverlay.classList.remove('visible');
-        customPopup.classList.remove('visible');
-        
-        
-        setTimeout(() => {
-            popupOverlay.style.display = 'none';
-        }, 500); 
-    }
-
-    
-   .closeButton.addEventListener('click', closePopup);
- 
-    popupOverlay.addEventListener('click', function(event) {
-       
-        if (event.target === popupOverlay) {
-            closePopup();
-        }
-    });
-;
