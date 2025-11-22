@@ -1,121 +1,102 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // Seleção de todos os elementos necessários
-    const mainHeader = document.getElementById('main-header');
-    const brandLogo = document.querySelector('.brand-logo');
+    // --- 1. MENU MOBILE ---
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
-    const contentSections = document.querySelectorAll('.content-section');
-    const galleryItems = document.querySelectorAll('.gallery-item');
 
-    // Elementos do Overlay (Galeria)
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('fa-times');
+        hamburger.classList.toggle('fa-bars');
+    });
+
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    });
+
+    // --- 2. ANIMAÇÃO AO ROLAR (Scroll Reveal) ---
+    const observerOptions = {
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const elementsToAnimate = document.querySelectorAll('.fade-up');
+    elementsToAnimate.forEach(el => observer.observe(el));
+
+    // --- 3. GALERIA LIGHTBOX ---
+    const galleryItems = document.querySelectorAll('.gallery-item img');
     const overlay = document.getElementById('overlay');
     const fullImg = document.getElementById('full-img');
     const closeBtn = document.getElementById('close-btn');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
 
-    let currentImageIndex = 0;
-    const galleryImages = Array.from(galleryItems).map(item => item.querySelector('img'));
+    let currentIndex = 0;
 
-    // --- ELEMENTOS DO NOVO POP-UP UNIFICADO ---
-    const popupMascote = document.getElementById('popupMascote');
-    const fecharPopupMascote = document.getElementById('fecharPopupMascote');
-
-
-    // --- TROCAR DE SEÇÃO (ABAS) ---
-    function switchTab(event) {
-        event.preventDefault();
-        const targetId = event.currentTarget.dataset.section;
-
-
-        navLinks.forEach(link => link.classList.remove('active'));
-        contentSections.forEach(section => section.classList.remove('active'));
-
-
-        event.currentTarget.classList.add('active');
-        const targetSection = document.getElementById(targetId);
-
-        if (targetSection) {
-            targetSection.classList.add('active');
-        }
-    }
-
-    // --- LÓGICA DA GALERIA ---
-    function openImage(index) {
-        if (index < 0 || index >= galleryImages.length) return;
-
-        currentImageIndex = index;
-        const img = galleryImages[currentImageIndex];
-
-        fullImg.src = img.src;
-        fullImg.alt = img.alt;
+    function openGallery(index) {
+        currentIndex = index;
+        fullImg.src = galleryItems[currentIndex].src;
         overlay.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden'; // Trava o scroll 
     }
 
-    function closeOverlay() {
+    function closeGallery() {
         overlay.style.display = 'none';
-        fullImg.src = '';
         document.body.style.overflow = 'auto';
     }
 
-    function showNextImage() {
-        const nextIndex = (currentImageIndex + 1) % galleryImages.length;
-        openImage(nextIndex);
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % galleryItems.length;
+        fullImg.src = galleryItems[currentIndex].src;
     }
 
-    function showPrevImage() {
-        const prevIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-        openImage(prevIndex);
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+        fullImg.src = galleryItems[currentIndex].src;
     }
 
-    // --- LÓGICA DO MASCOTE ---
-    if (fecharPopupMascote) {
-        fecharPopupMascote.addEventListener('click', () => {
-            popupMascote.style.display = 'none';
-        });
-    }
-
-    // --- EVENT LISTENERS ---
-
-    // Navegação
-    navLinks.forEach(link => {
-        link.addEventListener('click', switchTab);
+    // Eventos da Galeria
+    galleryItems.forEach((img, index) => {
+        img.parentElement.addEventListener('click', () => openGallery(index));
     });
 
-    // Galeria
-    galleryImages.forEach((img, index) => {
-        img.addEventListener('click', () => {
-            openImage(index);
-        });
+    closeBtn.addEventListener('click', closeGallery);
+    nextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextImage(); });
+    prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevImage(); });
+
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeGallery();
     });
 
-    // Controles do Overlay
-    closeBtn.addEventListener('click', closeOverlay);
-    nextBtn.addEventListener('click', showNextImage);
-    prevBtn.addEventListener('click', showPrevImage);
-
-    overlay.addEventListener('click', (event) => {
-        if (event.target === overlay) {
-            closeOverlay();
-        }
-    });
-
-    // Navegação pela galeria com as setas do teclado
-    document.addEventListener('keydown', (event) => {
+    // Teclado na Galeria
+    document.addEventListener('keydown', (e) => {
         if (overlay.style.display === 'flex') {
-            if (event.key === 'ArrowRight') {
-                showNextImage();
-            } else if (event.key === 'ArrowLeft') {
-                showPrevImage();
-            } else if (event.key === 'Escape') {
-                closeOverlay();
-            }
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+            if (e.key === 'Escape') closeGallery();
         }
     });
 
+    // --- 4. MASCOTE FLUTUANTE ---
+    const popupMascote = document.getElementById('popupMascote');
+    const fecharPopup = document.getElementById('fecharPopupMascote');
+    const bubbleBox = document.querySelector('.bubble-box');
 
-
-    document.querySelector('.nav-link[data-section="home-section"]').click();
-
+    if (fecharPopup) {
+        fecharPopup.addEventListener('click', () => {
+            bubbleBox.style.display = 'none';
+        });
+    }
 });
