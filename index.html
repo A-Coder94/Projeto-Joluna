@@ -4,221 +4,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Social Joluna </title>
+    <title>Projeto Social Joluna | Lapidando Talentos</title>
 
     <link rel="icon" href="img/favicon.png" type="image/png">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;500&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header id="main-header">
-        <div class="header-content-wrapper">
-            <span class="header-text left">Lapidando talentos</span>
-            <img src="img/logo.png" alt="Logo do Projeto Joluna" class="brand-logo">
-            <span class="header-text right">Construindo o futuro</span>
+
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <img src="img/logo.png" alt="Joluna Logo">
+                <span>Projeto Social Joluna</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Início</a></li>
+                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#galeria" class="nav-link">Galeria</a></li>
+                <li><a href="#apoiadores" class="nav-link">Apoiadores</a></li>
+                <li><a href="#contato" class="nav-link btn-contact">Contato</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade-up">
+            <span class="hero-tag">Lapidando Talentos</span>
+            <h1>Projeto Social Joluna</h1>
+            <p class="hero-subtitle">Construindo o futuro através do esporte e da educação. Nossa visão vai além das
+                quadras.</p>
+            <div class="hero-buttons">
+                <a href="#contato" class="btn btn-primary">Quero Ajudar</a>
+                <a href="#sobre" class="btn btn-outline">Conhecer Mais</a>
+            </div>
         </div>
     </header>
 
-    <nav id="main-nav">
-        <ul>
-            <li><a href="#home-section" class="nav-link active" data-section="home-section"><i class="fas fa-home"></i>
-                    Início</a></li>
-            <li><a href="#gallery-section" class="nav-link" data-section="gallery-section"><i class="fas fa-images"></i>
-                    Galeria</a></li>
-            <li><a href="#partners-section" class="nav-link" data-section="partners-section"><i
-                        class="fas fa-handshake"></i> Apoiadores</a></li>
-            <li><a href="#contact-section" class="nav-link" data-section="contact-section"><i
-                        class="fas fa-envelope"></i> Contato</a></li>
-        </ul>
-    </nav>
+    <main>
+        <section id="sobre" class="section">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <h2>Quem Somos</h2>
+                    <p>Uma iniciativa transformadora idealizada pelo Professor Jorge Luís do Nascimento.</p>
+                </div>
 
-    <main id="content-area">
-        <section id="home-section" class="content-section active">
-            <h2 class="section-title">Bem-vindo ao Projeto Joluna!</h2>
-            <div class="card">
-                <p class="intro-text">
-                    <b>O Projeto Social Joluna</b> é uma iniciativa transformadora idealizada pelo Professor Jorge Luís
-                    do Nascimento, que acredita no poder do esporte e da educação para lapidar talentos e construir um
-                    futuro melhor para nossas crianças e adolescentes. Com o lema "Nossa Visão Além do Esporte", vamos
-                    muito além das quadras, buscando o desenvolvimento integral de cada participante.
-                </p>
+                <div class="about-grid">
+                    <div class="card fade-up delay-1">
+                        <div class="icon-box"><i class="fas fa-bullseye"></i></div>
+                        <h3>Nossa Missão</h3>
+                        <p>Usar o esporte como ferramenta para combater o abandono escolar, afastar jovens de riscos
+                            sociais e desenvolver caráter.</p>
+                    </div>
+                    <div class="card fade-up delay-2">
+                        <div class="icon-box"><i class="fas fa-running"></i></div>
+                        <h3>Atividades</h3>
+                        <p>Futsal, Futvôlei, Badminton e Tênis (4 a 16 anos). Incentivo ao esporte feminino e categoria
+                            máster.</p>
+                    </div>
+                    <div class="card fade-up delay-3">
+                        <div class="icon-box"><i class="fas fa-heart"></i></div>
+                        <h3>Inclusão Total</h3>
+                        <p>Sem distinção de raça, crença ou origem. Acolhimento a refugiados e foco na inclusão de
+                            pessoas com deficiência.</p>
+                    </div>
+                </div>
 
-                <div class="mission-points">
-                    <div class="mission-item">
-                        <h3><i class="fas fa-bullseye"></i> Nossa Missão</h3>
-                        <p>Usar o esporte como ferramenta para combater o abandono escolar, afastar os jovens de riscos
-                            sociais e desenvolver seu caráter, integrando-os de forma construtiva na sociedade.</p>
+                <div class="founder-card fade-up">
+                    <div class="founder-img">
+                        <img src="img/JorgeL.jpeg" alt="Jorge Luis" loading="lazy">
                     </div>
-                    <div class="mission-item">
-                        <h3><i class="fas fa-running"></i> Atividades Oferecidas</h3>
-                        <p>Oferecemos Futsal, Futvôlei, Badminton e Tênis para idades de 4 a 16 anos, com forte
-                            incentivo ao esporte feminino e uma categoria máster para atletas veteranos.</p>
-                    </div>
-                    <div class="mission-item full-width-item">
-                        <h3><i class="fas fa-users"></i> Para Todos</h3>
-                        <p>O Joluna se orgulha de ser um projeto inclusivo. Não fazemos distinção de raça, crença ou
-                            origem social. Nossas
-                            portas estão abertas para todos, incluindo um trabalho especial de acolhimento a crianças
-                            refugiadas, promovendo
-                            um rico intercâmbio cultural e facilitando a integração. Além disso, buscamos desenvolver
-                            metodologias para a
-                            inclusão profissional de pessoas com deficiência. Acreditamos que a educação deve sempre vir
-                            em primeiro lugar,
-                            acompanhada pela prática esportiva. Por meio de parcerias e do envolvimento com as famílias,
-                            escolas e a comunidade,
-                            o Projeto Social Joluna trabalha para formar não apenas atletas, mas grandes cidadãos.
-                        </p>
+                    <div class="founder-info">
+                        <h4>Jorge Luis do Nascimento</h4>
+                        <span>Fundador & Visionário</span>
+                        <p>"Com anos de experiência, minha dedicação e crença no potencial de cada jovem impulsionam o
+                            Joluna a ir sempre além."</p>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="owner-info card">
-                <img src="img/JorgeL.jpeg" alt="Foto do Fundador Jorge Luis" class="owner-photo">
-                <div class="owner-details">
-                    <p class="owner-name">Jorge Luis do Nascimento</p>
-                    <p class="owner-role">Fundador & Visionário do Projeto Joluna</p>
-                    <p class="owner-bio">
-                        Com anos de experiência no esporte e desenvolvimento de jovens, Jorge é a força motriz de nossa
-                        missão. Sua dedicação e crença no potencial de cada jovem são o que impulsionam o Projeto Joluna
-                        a ir sempre além.
-                    </p>
+        <section id="galeria" class="section bg-light">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <h2>Nossos Momentos</h2>
+                    <p>Um pouco do dia a dia e da alegria das nossas crianças.</p>
+                </div>
+
+                <div class="gallery-grid" id="gallery-grid">
+                    <div class="gallery-item fade-up"><img src="img/dia (1).jpg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/dia (2).jpg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/dia (3).jpg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/dia (4).jpg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/dia (5).jpg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/dia (6).jpg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/dia (7).jpg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/dia (8).jpg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/dia (9).jpg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/dia (10).jpg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/dia (11).jpg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/dia (12).jpg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/dia (13).jpg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/dia (14).jpg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/dia (15).jpg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/dia (16).jpg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/dia (17).jpg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/garotos.jpeg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/garotoss.jpeg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/garotos2.jpeg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/garotos1.jpeg" alt="Projeto Joluna" loading="lazy">
+                    </div>
+                    <div class="gallery-item fade-up"><img src="img/21.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/22.jpg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/23.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/24.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/1.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/2.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/3.jpg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/4.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/5.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/6.jpg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/7.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/8.jpg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/9.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/10.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/11.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/12.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/13.jpg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/14.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/15.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/16.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/17.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/18.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/19.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/20.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/33.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/35.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up"><img src="img/31.jpeg" alt="Projeto Joluna" loading="lazy"></div>
+                    <div class="gallery-item fade-up">><img src="img/34.jpeg" alt="Projeto Joluna" loading="lazy"></div>
                 </div>
             </div>
-
         </section>
 
-        <section id="gallery-section" class="content-section">
-            <h2 class="section-title">Nossos Momentos</h2>
-            <div id="image-gallery">
-                <div class="gallery-item"><img src="img/dia (1).jpg" alt="equipe joluna"></div>
-                <div class="gallery-item"><img src="img/dia (2).jpg" alt="equipe joluna"></div>
-                <div class="gallery-item"><img src="img/dia (3).jpg" alt="equipe joluna"></div>
-                <div class="gallery-item"><img src="img/dia (4).jpg" alt="equipe joluna"></div>
-                <div class="gallery-item"><img src="img/dia (5).jpg" alt="equipe joluna"></div>
-                <div class="gallery-item"><img src="img/dia (6).jpg" alt="equipe joluna"></div>
-                <div class="gallery-item"><img src="img/dia (7).jpg" alt="equipe joluna"></div>
-                <div class="gallery-item"><img src="img/dia (8).jpg" alt="equipe joluna"></div>
-                <div class="gallery-item"><img src="img/dia (9).jpg" alt="equipe joluna"></div>
-                <div class="gallery-item"><img src="img/dia (10).jpg" alt="equipe joluna"></div>
-                <div class="gallery-item"><img src="img/dia (11).jpg" alt="equipe joluna"></div>
-                <div class="gallery-item"><img src="img/dia (12).jpg" alt="equipe joluna"></div>
-                <div class="gallery-item"><img src="img/dia (13).jpg" alt="equipe joluna"></div>
-                <div class="gallery-item"><img src="img/dia (14).jpg" alt="equipe joluna"></div>
-                <div class="gallery-item"><img src="img/dia (15).jpg" alt="equipe joluna"></div>
-                <div class="gallery-item"><img src="img/dia (16).jpg" alt="equipe joluna"></div>
-                <div class="gallery-item"><img src="img/dia (17).jpg" alt="equipe joluna"></div>
-                <div class="gallery-item"><img src="img/garotos.jpeg" alt="garotos lanchando"></div>
-                <div class="gallery-item"><img src="img/garotoss.jpeg" alt="garotos lanchando"></div>
-                <div class="gallery-item"><img src="img/garotos2.jpeg" alt="garotos lanchando"></div>
-                <div class="gallery-item"><img src="img/garotos1.jpeg" alt="garotos lanchando"></div>
-                <div class="gallery-item"><img src="img/21.jpeg" alt="Crianças na quadra"></div>
-                <div class="gallery-item"><img src="img/22.jpg" alt="Equipe reunida"></div>
-                <div class="gallery-item"><img src="img/23.jpeg" alt="Jogadores em ação"></div>
-                <div class="gallery-item"><img src="img/24.jpeg" alt="Treino de futsal"></div>
-                <div class="gallery-item"><img src="img/1.jpeg" alt="Banner do projeto"></div>
-                <div class="gallery-item"><img src="img/2.jpeg" alt="Categoria Fraldinhas"></div>
-                <div class="gallery-item"><img src="img/3.jpg" alt="Crianças jogando"></div>
-                <div class="gallery-item"><img src="img/4.jpeg" alt="Momento de união"></div>
-                <div class="gallery-item"><img src="img/5.jpeg" alt="Equipe posando para foto"></div>
-                <div class="gallery-item"><img src="img/6.jpg" alt="Jorge e as crianças na quadra"></div>
-                <div class="gallery-item"><img src="img/7.jpeg" alt="Jovens atletas"></div>
-                <div class="gallery-item"><img src="img/8.jpg" alt="Professor orientando"></div>
-                <div class="gallery-item"><img src="img/9.jpeg" alt="Time unido"></div>
-                <div class="gallery-item"><img src="img/10.jpeg" alt="Criança com a bola"></div>
-                <div class="gallery-item"><img src="img/11.jpeg" alt="Atleta em foco"></div>
-                <div class="gallery-item"><img src="img/12.jpeg" alt="Jorge com os alunos"></div>
-                <div class="gallery-item"><img src="img/13.jpg" alt="Professor e aluno"></div>
-                <div class="gallery-item"><img src="img/14.jpeg" alt="Exibição de medalhas"></div>
-                <div class="gallery-item"><img src="img/15.jpeg" alt="Crianças em aquecimento"></div>
-                <div class="gallery-item"><img src="img/16.jpeg" alt="Grupo de alunas"></div>
-                <div class="gallery-item"><img src="img/17.jpeg" alt="Professor e um garoto"></div>
-                <div class="gallery-item"><img src="img/18.jpeg" alt="Amigos em quadra"></div>
-                <div class="gallery-item"><img src="img/19.jpeg" alt="Equipe em formação"></div>
-                <div class="gallery-item"><img src="img/20.jpeg" alt="Meninas no treino"></div>
-                <div class="gallery-item"><img src="img/33.jpeg" alt="Jogada ensaiada"></div>
-                <div class="gallery-item"><img src="img/35.jpeg" alt="Foto do time"></div>
-                <div class="gallery-item"><img src="img/31.jpeg" alt="Alunos perfilados"></div>
-                <div class="gallery-item"><img src="img/34.jpeg" alt="Comemoração"></div>
-
+        <section id="apoiadores" class="section">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <h2>Quem Acredita no Sonho</h2>
+                </div>
+                <div class="partners-wrapper fade-up">
+                    <div class="partner-logo"><img src="img/rotary.png" alt="Parceiro" loading="lazy"></div>
+                    <div class="partner-logo"><img src="img/emporio.jpg" alt="Parceiro" loading="lazy"></div>
+                    <div class="partner-logo"><img src="img/quintal7.jpg" alt="Parceiro" loading="lazy"></div>
+                    <div class="partner-logo"><img src="img/moveis.png" alt="Parceiro" loading="lazy"></div>
+                    <div class="partner-logo"><img src="img/farmacia.jpg" alt="Parceiro" loading="lazy"></div>
+                    <div class="partner-logo"><img src="img/saltoFC.jpg" alt="Parceiro" loading="lazy"></div>
+                    <div class="partner-logo"><img src="img/cruz.jpeg" alt="Parceiro" loading="lazy"></div>
+                    <div class="partner-logo"><img src="img/wand.jpg" alt="Parceiro" loading="lazy"></div>
+                    <div class="partner-logo"><img src="img/embalagens.jpg" alt="Parceiro" loading="lazy"></div>
+                    <div class="partner-logo"><img src="img/hortifrutti.jpg" alt="Parceiro" loading="lazy"></div>
+                    <div class="partner-logo"><img src="img/auto.jpg" alt="Parceiro" loading="lazy"></div>
+                    <div class="partner-logo"><img src="img/grafica.jpg" alt="Parceiro" loading="lazy"></div>
+                    <div class="partner-logo"><img src="img/malheiro.jpeg" alt="Parceiro" loading="lazy"></div>
+                    <div class="partner-logo"><img src="img/disan.jpg" alt="Parceiro" loading="lazy"></div>
+                </div>
             </div>
         </section>
 
-        <section id="partners-section" class="content-section">
-            <h2 class="section-title">Nossos Apoiadores</h2>
-            <p class="intro-text">Agradecemos a todos que acreditam e investem em nosso sonho.</p>
-            <div id="partners-list">
-            <div class="partner-item"><img src="img/rotary.png" alt="Logo Rotary Club"></div>
-                <div class="partner-item"><img src="img/emporio.jpg" alt="Logo Disan"></div>
-                <div class="partner-item"><img src="img/quintal7.jpg" alt="Quintal 7"></div>
-                <div class="partner-item"><img src="img/moveis.png" alt="Logo Disan"></div>
-                <div class="partner-item"><img src="img/farmacia.jpg" alt="Logo Disan"></div>
-                <div class="partner-item"><img src="img/cruz.jpeg" alt="Logo Disan"></div>
-                <div class="partner-item"><img src="img/wand.jpg" alt="Logo Disan"></div>
-                <div class="partner-item"><img src="img/embalagens.jpg" alt="Logo Disan"></div>
-                <div class="partner-item"><img src="img/saltoFC.jpg" alt="Logo Salto FC"></div>
-                <div class="partner-item"><img src="img/grafica.jpg" alt="Logo Gráfica"></div>
-                <div class="partner-item"><img src="img/hortifrutti.jpg" alt="Logo Hortifruti"></div>
-                <div class="partner-item"><img src="img/auto.jpg" alt="Logo Auto Peças"></div>
-                <div class="partner-item"><img src="img/disan.jpg" alt="Logo Disan"></div>
-            </div>
-        </section>
-
-        <section id="contact-section" class="content-section">
-            <h2 class="section-title">Fale Conosco</h2>
-            <div class="contact-info card">
-                <p>Entre em contato e venha fazer parte da nossa história. Estamos de portas abertas!</p>
-                <div class="contact-links">
-                    <a href="https://wa.me/5511963073681" target="_blank"><i class="fab fa-whatsapp"></i> (11)
-                        96307-3681</a>
-                    <a href="mailto:contato@projetojoluna.com.br"><i class="fas fa-envelope"></i>
-                        contato@projetojoluna.com.br</a>
-                    <a href="https://www.instagram.com/projetojoluna/" target="_blank"><i class="fab fa-instagram"></i>
-                        @projetojoluna</a>
+        <section id="contato" class="section contact-section">
+            <div class="container">
+                <div class="contact-box fade-up">
+                    <div class="contact-text">
+                        <h2>Vamos Conversar?</h2>
+                        <p>Estamos de portas abertas para voluntários, doações ou para você matricular seu filho.</p>
+                        <div class="contact-links">
+                            <a href="https://wa.me/5511963073681" target="_blank" class="btn-social whatsapp">
+                                <i class="fab fa-whatsapp"></i> (11) 96307-3681
+                            </a>
+                            <a href="https://www.instagram.com/projetojoluna/" target="_blank"
+                                class="btn-social instagram">
+                                <i class="fab fa-instagram"></i> @projetojoluna
+                            </a>
+                            <a href="mailto:contato@projetojoluna.com.br" class="btn-social email">
+                                <i class="fas fa-envelope"></i> E-mail
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>PROJETO SOCIAL JOLUNA - CNPJ: 49.385.466/0001-41</p>
-        <p><b>Desenvolvido por Anderson de Souza</b> - &copy; 2025</p>
-
+        <div class="footer-content">
+            <p>PROJETO SOCIAL JOLUNA - CNPJ: 49.385.466/0001-41</p>
+            <p>Desenvolvido com <i class="fas fa-heart"></i> por <b>Anderson de Souza</b> &copy; 2025</p>
+        </div>
     </footer>
- <div class="overlay" id="overlay">
+
+    <div class="overlay" id="overlay">
         <span class="close-btn" id="close-btn">&times;</span>
         <img src="" alt="" class="full-img" id="full-img">
-        <span class="prev-btn" id="prev-btn">&#10094;</span>
-        <span class="next-btn" id="next-btn">&#10095;</span>
+        <button class="nav-btn prev-btn" id="prev-btn"><i class="fas fa-chevron-left"></i></button>
+        <button class="nav-btn next-btn" id="next-btn"><i class="fas fa-chevron-right"></i></button>
     </div>
 
-    <div id="popupMascote" class="popup-mascote-container">
+    <div id="popupMascote" class="mascote-container">
         <div class="bubble-box">
             <button class="fechar-popup" id="fecharPopupMascote">&times;</button>
-            <p>
-                Acompanhe-nos nas redes!
-            </p>
-            <div class="bubble-actions">
-                <a href="https://www.instagram.com/projetojoluna/" target="_blank" class="link-instagram">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-                <a href="https://wa.me/5511963073681" target="_blank" class="link-whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-            </div>
+            <p>Olá! Já nos segue no Insta?</p>
+            <a href="https://www.instagram.com/projetojoluna/" target="_blank" class="link-insta">
+                <i class="fab fa-instagram"></i> Seguir
+            </a>
         </div>
-
-        <img src="img/mascote.png" alt="Mascote do Projeto" class="mascote-flutuante">
+        <img src="img/mascote.png" alt="Mascote" class="mascote-img">
     </div>
+
     <script src="script.js"></script>
 </body>
 
