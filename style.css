@@ -74,16 +74,19 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* Garante que o menu fique acima da decoração se necessário */
+    z-index: 1002;
 }
 
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: 15px;
-    font-size: 1.8rem;
-    font-weight: 250;
+    gap: 25px;
+    font-size: 2.4rem;
+    font-weight: 350;
     color: var(--primary);
 }
+
 
 .nav-logo img {
     width: 150px;
@@ -128,6 +131,25 @@ a {
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--primary);
+}
+
+/* --- Decoração de Natal (Topo) --- */
+.decoracao-natal {
+    position: absolute;
+    top: 0;
+    z-index: 1001; /* Fica acima do fundo do nav, mas abaixo dos links */
+    width: 180px;  /* Tamanho da decoração - ajuste se precisar */
+    pointer-events: none; /* ESSENCIAL: Permite clicar nos botões atrás da imagem */
+    filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.2));
+}
+
+.decoracao-natal.esquerda {
+    left: 0;
+}
+
+.decoracao-natal.direita {
+    right: 0;
+    transform: scaleX(-1); /* Espelha a imagem para o outro lado */
 }
 
 /* --- Hero Section --- */
@@ -665,5 +687,10 @@ footer b {
     .founder-card {
         border-left: none;
         border-top: 5px solid var(--primary);
+    }
+
+    /* Ajuste da decoração de natal no celular */
+    .decoracao-natal {
+        width: 100px; /* Reduz o tamanho no celular */
     }
 }
