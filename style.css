@@ -439,6 +439,11 @@ footer {
     width: 130px;
     transition: 0.5s;
     cursor: pointer;
+    color: var(#FFFFFF); 
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+
 }
 
 
