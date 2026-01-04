@@ -435,8 +435,8 @@ footer {
 }
 
 .mascote-img {
-    width: 170px;
-    transition: 0.3s;
+    width: 130px;
+    transition: 0.5s;
     cursor: pointer;
 }
 
