@@ -66,6 +66,23 @@ document.addEventListener('DOMContentLoaded', function () {
         currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
         fullImg.src = galleryItems[currentIndex].src;
     }
+    //----Logica de "Ver Mais Fotos" ----//
+    const galleryGrid = document.getElementById('gallery-grid');
+    const loadMoreBtn = document.getElementById('loadMore');
+
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function () {
+            galleryGrid.classList.toggle('expanded');
+
+            if (galleryGrid.classList.contains('expanded')) {
+                loadMoreBtn.textContent = 'Ver Menos';
+            } else {
+                loadMoreBtn.textContent = 'Ver Mais Fotos';
+
+                galleryGrid.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
 
     // Eventos da Galeria
     galleryItems.forEach((img, index) => {
