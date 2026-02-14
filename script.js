@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // --- 2. ANIMAÇÃO AO ROLAR (Scroll Reveal) ---
+    // --- 2. ANIMAÇÃO ROLAR ---
     const observerOptions = {
         threshold: 0.15
     };
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
         currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
         fullImg.src = galleryItems[currentIndex].src;
     }
-    //----Logica de "Ver Mais Fotos" ----//
+    //---- "Ver Mais Fotos" ----//
     const galleryGrid = document.getElementById('gallery-grid');
     const loadMoreBtn = document.getElementById('loadMore');
 
