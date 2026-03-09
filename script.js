@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         hamburger.classList.toggle('fa-bars');
     });
 
-
+ 
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
