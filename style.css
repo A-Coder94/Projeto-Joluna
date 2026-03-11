@@ -520,13 +520,13 @@ footer {
 }
 
 .mascote-img {
-    width: 130px;
+    width: 100px;
     transition: 0.5s;
     cursor: pointer;
 }
 
 .mascote-img:hover {
-    transform: scale(1.05);
+    transform: scale(1.07);
 }
 
 /* --- LIGHTBOX --- */
