@@ -638,3 +638,48 @@ footer {
         transform: translateX(-50%);
     }
 }
+
+/* Depoimentos */
+.testimonials-carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    margin: 40px auto;
+}
+
+.testimonials-track {
+    display: flex;
+    transition: transform 0.6s ease;
+}
+
+.testimonial-item {
+    width: 100%;
+    flex-shrink: 0;
+    background: var(none);
+    border-radius: var(--glass);
+    box-shadow: var(--none);
+    overflow: hidden;
+    transition: var(--transition);
+    margin: 0;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+/* Responsivo */
+@media (max-width: 528px) {
+    .testimonial-item {
+        min-width: 200px;
+    }
+}
