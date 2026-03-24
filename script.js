@@ -106,6 +106,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+// --- 4. SLIDER DE DEPOIMENTOS ---
+    const testimonialsTrack = document.querySelector('.testimonials-track');
+    const testimonialItems = document.querySelectorAll('.testimonial-item');
+    let currentTestimonial = 0;
+
+    function nextTestimonial() {
+        currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
+        updateTestimonialPosition();
+    }
+
+    function updateTestimonialPosition() {
+        const translateX = -currentTestimonial * 100;
+        testimonialsTrack.style.transform = `translateX(${translateX}%)`;
+    }
+
+    // Slide auto 5s
+    setInterval(nextTestimonial, 5000);
+
+    
     // --- 4. MASCOTE FLUTUANTE ---
     const popupMascote = document.getElementById('popupMascote');
     const fecharPopup = document.getElementById('fecharPopupMascote');
