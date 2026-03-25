@@ -121,8 +121,8 @@ document.addEventListener('DOMContentLoaded', function () {
         testimonialsTrack.style.transform = `translateX(${translateX}%)`;
     }
 
-    // Slide auto 5s
-    setInterval(nextTestimonial, 5000);
+    // Slide auto 4s
+    setInterval(nextTestimonial, 4000);
 
     
     // --- 4. MASCOTE FLUTUANTE ---
