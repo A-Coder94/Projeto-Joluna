@@ -8,7 +8,7 @@
     --white: #FFFFFF;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     --glass: rgba(255, 255, 255, 0.95);
-    --radius: 17px;
+    --radius: 16px;
     --transition: all 0.3s ease;
 }
 
@@ -62,6 +62,7 @@ a {
     width: 100%;
     z-index: 1000;
     background: var(--glass);
+    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     background: rgba(255, 255, 255, 0.85);
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
@@ -155,8 +156,8 @@ a {
     width: 100%;
     height: 160px;
 
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 
     background: linear-gradient(to bottom,
             rgba(255, 255, 255, 0.85) 0%,
@@ -356,13 +357,7 @@ a {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 15px;
-    max-height: 530px;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-}
-
-.gallery-grid.expanded {
-    max-height: 5000px;
+    transition: all 0.3s ease;
 }
 
 .gallery-item {
@@ -517,16 +512,74 @@ footer {
     font-size: 1.2rem;
     cursor: pointer;
     color: #999;
+    transition: color 0.3s ease;
+}
+
+.fechar-popup:hover {
+    color: #333;
 }
 
 .mascote-img {
-    width: 100px;
+    width: 130px;
     transition: 0.5s;
     cursor: pointer;
 }
 
 .mascote-img:hover {
-    transform: scale(1.07);
+    transform: scale(1.05);
+}
+
+/* --- Gallery Button Container --- */
+.gallery-button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* --- Lightbox Navigation Buttons --- */
+.nav-btn {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    z-index: 2001;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.prev-btn {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.next-btn {
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2002;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #ccc;
 }
 
 /* --- LIGHTBOX --- */
@@ -636,50 +689,5 @@ footer {
 
     to {
         transform: translateX(-50%);
-    }
-}
-
-/* Depoimentos */
-.testimonials-carousel {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    max-width: 450px;
-    margin: 40px auto;
-}
-
-.testimonials-track {
-    display: flex;
-    transition: transform 0.6s ease;
-}
-
-.testimonial-item {
-    width: 100%;
-    flex-shrink: 0;
-    background: var(none);
-    border-radius: var(--glass);
-    box-shadow: var(--none);
-    overflow: hidden;
-    transition: var(--transition);
-    margin: 0;
-}
-
-.testimonial-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-}
-
-.testimonial-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    max-height: 400px;
-    object-fit: contain;
-}
-
-/* Responsivo */
-@media (max-width: 528px) {
-    .testimonial-item {
-        min-width: 200px;
     }
 }
