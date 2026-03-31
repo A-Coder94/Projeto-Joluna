@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         hamburger.classList.toggle('fa-bars');
     });
 
- 
+
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
@@ -48,6 +48,10 @@ document.addEventListener('DOMContentLoaded', function () {
     function openGallery(index) {
         currentIndex = index;
         fullImg.src = galleryItems[currentIndex].src;
+        fullImg.onerror = function () {
+            console.warn('Imagem não encontrada: ' + galleryItems[currentIndex].src);
+            fullImg.src = 'img/placeholder.png'; // Fallback
+        };
         overlay.style.display = 'flex';
         document.body.style.overflow = 'hidden'; // Trava o scroll 
     }
@@ -60,25 +64,61 @@ document.addEventListener('DOMContentLoaded', function () {
     function nextImage() {
         currentIndex = (currentIndex + 1) % galleryItems.length;
         fullImg.src = galleryItems[currentIndex].src;
+        fullImg.onerror = function () {
+            console.warn('Imagem não encontrada: ' + galleryItems[currentIndex].src);
+        };
     }
 
     function prevImage() {
         currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
         fullImg.src = galleryItems[currentIndex].src;
+        fullImg.onerror = function () {
+            console.warn('Imagem não encontrada: ' + galleryItems[currentIndex].src);
+        };
     }
-    //---- "Ver Mais Fotos" ----//
+    //---- "Ver Mais Fotos" - Carregamento de 8 em 8 ----//
     const galleryGrid = document.getElementById('gallery-grid');
     const loadMoreBtn = document.getElementById('loadMore');
+    const galleryItemsElements = document.querySelectorAll('.gallery-item');
+    const itemsPerLoad = 8;
+    let visibleItems = 8; // Começar com 8 items visíveis
+
+    // Inicialmente esconder os itens 
+    galleryItemsElements.forEach((item, index) => {
+        if (index >= visibleItems) {
+            item.style.display = 'none';
+        }
+    });
 
     if (loadMoreBtn) {
         loadMoreBtn.addEventListener('click', function () {
-            galleryGrid.classList.toggle('expanded');
+            if (visibleItems < galleryItemsElements.length) {
+                // Mostrar mais 8 itens
+                const nextLimit = Math.min(visibleItems + itemsPerLoad, galleryItemsElements.length);
 
-            if (galleryGrid.classList.contains('expanded')) {
-                loadMoreBtn.textContent = 'Ver Menos';
+                for (let i = visibleItems; i < nextLimit; i++) {
+                    galleryItemsElements[i].style.display = '';
+                }
+
+                visibleItems = nextLimit;
+
+
+                galleryGrid.scrollIntoView({ behavior: 'smooth' });
+
+                // Mudar texto do botão se todas foram carregadas
+                if (visibleItems >= galleryItemsElements.length) {
+                    loadMoreBtn.textContent = 'Ver Menos';
+                }
             } else {
+                // Esconder itens e voltar ao estado inicial
+                for (let i = itemsPerLoad; i < galleryItemsElements.length; i++) {
+                    galleryItemsElements[i].style.display = 'none';
+                }
+
+                visibleItems = itemsPerLoad;
                 loadMoreBtn.textContent = 'Ver Mais Fotos';
 
+                // Scroll suave até a galeria
                 galleryGrid.scrollIntoView({ behavior: 'smooth' });
             }
         });
@@ -86,6 +126,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Eventos da Galeria
     galleryItems.forEach((img, index) => {
+        // Validar imagens carregadas
+        img.onerror = function () {
+            console.warn(`Imagem não encontrada (posição ${index}): ${img.src}`);
+            img.parentElement.style.opacity = '0.5';
+        };
+
         img.parentElement.addEventListener('click', () => openGallery(index));
     });
 
@@ -106,25 +152,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-// --- 4. SLIDER DE DEPOIMENTOS ---
-    const testimonialsTrack = document.querySelector('.testimonials-track');
-    const testimonialItems = document.querySelectorAll('.testimonial-item');
-    let currentTestimonial = 0;
-
-    function nextTestimonial() {
-        currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
-        updateTestimonialPosition();
-    }
-
-    function updateTestimonialPosition() {
-        const translateX = -currentTestimonial * 100;
-        testimonialsTrack.style.transform = `translateX(${translateX}%)`;
-    }
-
-    // Slide auto 4s
-    setInterval(nextTestimonial, 4000);
-
-    
     // --- 4. MASCOTE FLUTUANTE ---
     const popupMascote = document.getElementById('popupMascote');
     const fecharPopup = document.getElementById('fecharPopupMascote');
