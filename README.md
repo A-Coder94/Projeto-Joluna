@@ -1,34 +1,32 @@
-# 🌟 Projeto Social Joluna – Site Oficial
+# 🌟 Projeto Social Joluna – Site Oficial 🌟 #
 
-**URL:** https://www.projetosocialjoluna.com.br/
+🔗 **Acesse o site:** https://www.projetosocialjoluna.com.br/
 
-Este repositório documenta o desenvolvimento do site institucional do  
-:contentReference[oaicite:0]{index=0}, uma iniciativa social voltada à transformação de vidas por meio do esporte, educação e inclusão social.
+Este repositório documenta o desenvolvimento do site institucional do Projeto Social Joluna, uma iniciativa voltada à transformação de vidas por meio do esporte, educação e inclusão social.
 
 ---
 
 ## 📌 Sobre o Projeto
 
-O Projeto Social Joluna é uma organização localizada em  
-:contentReference[oaicite:1]{index=1}, que atua diretamente com crianças e jovens da comunidade.
+O Projeto Social Joluna é uma organização localizada em Diadema (SP), que atua diretamente com crianças e jovens da comunidade.
 
-Sua missão é promover desenvolvimento social, disciplina, inclusão e oportunidades através da prática esportiva e acompanhamento educacional.
+Sua missão é promover desenvolvimento social, disciplina, inclusão e oportunidades por meio da prática esportiva e do acompanhamento educacional.
 
-O site foi desenvolvido com foco em:
+O site foi desenvolvido com os seguintes objetivos:
 
 - Apresentar a história e missão do projeto  
 - Divulgar atividades esportivas e educacionais  
 - Exibir parceiros e apoiadores  
-- Facilitar contato com voluntários e doadores  
+- Facilitar o contato com voluntários e doadores  
 - Fortalecer a presença digital da instituição  
 
 ---
 
 ## 🎯 Objetivo do Site
 
-O site tem caráter institucional e informativo.
+O site possui caráter institucional e informativo, sendo o principal canal digital do projeto.
 
-Ele serve como principal canal digital do projeto, permitindo que visitantes conheçam:
+Ele permite que visitantes conheçam:
 
 - Quem somos  
 - O que fazemos  
@@ -36,7 +34,7 @@ Ele serve como principal canal digital do projeto, permitindo que visitantes con
 - Como apoiar  
 - Como entrar em contato  
 
-Além disso, o site reforça a credibilidade da instituição perante parceiros e possíveis patrocinadores.
+Além disso, contribui para aumentar a credibilidade da instituição perante parceiros e patrocinadores.
 
 ---
 
@@ -44,55 +42,34 @@ Além disso, o site reforça a credibilidade da instituição perante parceiros 
 
 O site é organizado em seções estratégicas para facilitar a navegação:
 
-### 🏠 Home
-Apresentação inicial com chamada principal, identidade visual e botão de ação.
+### 🏠 Home  
+Apresentação inicial com identidade visual, mensagem principal e chamada para ação.
 
-### 📖 Sobre
-Explicação sobre a missão, valores e atuação do projeto na comunidade.
+### 📖 Sobre  
+Informações sobre missão, valores e atuação do projeto.
 
-### 🏅 Atividades
-Destaque para modalidades esportivas oferecidas às crianças e adolescentes.
+### 🏅 Atividades  
+Destaque das modalidades esportivas oferecidas.
 
-### 📸 Galeria
-Imagens reais das atividades, eventos e momentos do projeto.
+### 📸 Galeria  
+Imagens reais das atividades e eventos.
 
-### 🤝 Apoiadores
-Exibição de parceiros e instituições que apoiam a causa.
+### 🤝 Apoiadores  
+Exibição de parceiros e instituições apoiadoras.
 
-### 📞 Contato
-Informações para comunicação direta, redes sociais e possibilidade de apoio.
+### 📞 Contato  
+Informações de contato e acesso às redes sociais.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-O site foi desenvolvido utilizando:
-
 - HTML5  
 - CSS3  
 - JavaScript  
-- Estrutura responsiva (Mobile First)  
-- Hospedagem com domínio próprio  
+- Layout responsivo (Mobile First)  
 
-O foco foi criar uma estrutura leve, moderna e de fácil manutenção.
-
----
-
-## 🎨 Design e Experiência
-
-O layout foi pensado para transmitir:
-
-- Acolhimento  
-- Organização  
-- Confiança  
-- Clareza nas informações  
-
-Características principais:
-
-- Design responsivo  
-- Navegação simples e intuitiva  
-- Identidade visual alinhada ao projeto  
-- Destaque para imagens reais das atividades  
+O projeto foi desenvolvido com foco em simplicidade, performance e fácil manutenção.
 
 ---
 
@@ -106,9 +83,27 @@ Características principais:
 
 ---
 
+## 🎨 Design e Experiência
+
+O layout foi planejado para transmitir:
+
+- Acolhimento  
+- Clareza nas informações  
+- Organização visual  
+- Confiança  
+
+Principais características:
+
+- Design responsivo  
+- Navegação simples e intuitiva  
+- Identidade visual alinhada ao projeto  
+- Uso de imagens reais para reforçar autenticidade  
+
+---
+
 ## 👥 Público-Alvo
 
-O site foi desenvolvido para atender:
+O site atende principalmente:
 
 - Pais e responsáveis  
 - Crianças e adolescentes  
@@ -120,41 +115,56 @@ O site foi desenvolvido para atender:
 
 ## 🌐 Acesso ao Projeto
 
-O site está disponível publicamente no endereço:
+O site está disponível publicamente em:
 
-https://www.projetosocialjoluna.com.br/
+🔗 https://www.projetosocialjoluna.com.br/
 
-Não é necessária nenhuma instalação local para visualização.
+Não é necessária instalação para visualização.
+
+---
+
+## 🧠 Decisões Técnicas
+
+- Utilização de HTML, CSS e JavaScript puro para reforçar domínio da base  
+- Estrutura leve para melhor desempenho e carregamento rápido  
+- Organização focada em usabilidade para públicos diversos  
+- Separação simples de responsabilidades (estrutura, estilo e comportamento)  
 
 ---
 
 ## 📈 Impacto Digital
 
-A presença online fortalece:
+A presença online contribui para:
 
-- A transparência do projeto  
-- A captação de novos apoiadores  
-- A comunicação com a comunidade  
-- A divulgação das ações sociais  
+- Maior visibilidade do projeto  
+- Captação de novos apoiadores  
+- Fortalecimento da comunicação com a comunidade  
+- Transparência institucional  
+
+---
+
+## 🔮 Possíveis Evoluções
+
+- Sistema de doações online  
+- Área de notícias ou blog  
+- Formulário com backend integrado  
+- Painel administrativo  
 
 ---
 
 ## 👨‍💻 Desenvolvimento
 
-Este site foi desenvolvido com foco em performance, clareza visual e facilidade de atualização.
+Projeto desenvolvido com foco em:
 
-A estrutura foi organizada para permitir futuras expansões, como:
-
-- Área de doações online  
-- Blog ou notícias  
-- Sistema de inscrição  
-- Painel administrativo  
+- Performance  
+- Clareza visual  
+- Escalabilidade futura  
 
 ---
 
 ## 🙌 Agradecimentos
 
-A todos os voluntários, parceiros e apoiadores que contribuem para que o Projeto Social Joluna continue impactando vidas e construindo um futuro melhor.
+A todos os voluntários, parceiros e apoiadores que contribuem para o crescimento do Projeto Social Joluna.
 
 ---
 
