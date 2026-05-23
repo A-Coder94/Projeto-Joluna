@@ -1,0 +1,22 @@
+/* stylelint-disable at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-poppins bg-bgLight text-text-dark antialiased overflow-x-hidden;
+}
+
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
