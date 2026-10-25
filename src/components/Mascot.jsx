@@ -11,16 +11,16 @@ export default function Mascot() {
   }, []);
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end pointer-events-none">
+    <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40 flex flex-col items-end pointer-events-none">
       <AnimatePresence>
         {showBubble && (
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 10 }}
-            className="bg-white border-2 border-primary text-text-dark p-4 rounded-2xl shadow-xl mb-3 relative min-w-[180px] text-center pointer-events-auto"
+            className="bg-white border-2 border-primary text-text-dark p-4 rounded-2xl shadow-xl mb-3 relative w-[min(18rem,calc(100vw-2rem))] text-center pointer-events-auto"
           >
-            <button onClick={() => setShowBubble(false)} className="absolute top-2 right-2 text-slate-400 hover:text-text-dark">
+            <button type="button" onClick={() => setShowBubble(false)} aria-label="Fechar mensagem do mascote" className="absolute top-2 right-2 text-slate-400 hover:text-text-dark p-1">
               <X size={14} />
             </button>
             <p className="text-sm font-bold leading-tight pt-1">
@@ -35,14 +35,15 @@ export default function Mascot() {
         href="https://www.instagram.com/projetojoluna/"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Acessar o Instagram do Projeto Social Joluna"
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
         className="pointer-events-auto block cursor-pointer"
       >
         <img 
-          src="public/img/mascote.png" 
+          src="/img/mascote.png"
           alt="Mascote Joluna" 
-          className="w-24 h-24 md:w-28 md:h-28 object-contain drop-shadow-xl" 
+          className="w-16 h-16 md:w-28 md:h-28 object-contain drop-shadow-xl"
         />
       </motion.a>
     </div>

@@ -26,8 +26,8 @@ O site foi reestruturado seguindo a arquitetura moderna de componentes reutiliz�
 - **`Navbar`**: Barra de navegação flutuante com efeito *glassmorphism* (desfoque de vidro), links com rolagem suave e menu mobile responsivo animado.
 - **`Hero`**: Primeira dobra de alto impacto visual, utilizando uma sobreposição de degradê inteligente para garantir contraste e legibilidade perfeita sobre a foto de cobertura.
 - **`About`**: Apresentação institucional baseada no conceito moderno de **Bento Grid** assimétrico para destacar a Missão, Impacto e Inclusão, além de um card especial dedicado ao fundador, Professor Jorginho.
-- **`Gallery`**: Grid dinâmico e responsivo integrado com mais de 40 fotos reais do projeto, contando com paginação inteligente ("Ver Mais") e um sistema de visualização em tela cheia (*Lightbox*) nativo.
-- **`Partners`**: Um carrossel infinito e contínuo com efeito hipnótico que exibe as marcas de todas as empresas e apoiadores locais.
+- **`Gallery`**: Grid responsivo com mais de 40 fotos do projeto, botão para expandir a galeria e visualizador em tela cheia com navegação por teclado.
+- **`Partners`**: Carrossel contínuo de apoiadores, com rolagem manual em telas pequenas e respeito à preferência por movimento reduzido.
 - **`Mascot`**: Um assistente virtual flutuante e animado que interage sutilmente com o usuário, convidando-o de maneira elástica (*bounce effect*) a visitar as redes sociais do projeto.
 - **`Footer`**: Rodapé institucional contendo as informações oficiais de transparência (CNPJ), assinatura do desenvolvedor e cartões de chamada para ação rápidos conectados diretamente ao WhatsApp e Instagram oficiais.
 
@@ -48,9 +48,9 @@ A stack tecnológica foi totalmente reformulada para garantir o estado da arte d
 
 ## 🚀 Funcionalidades Modernas
 
-- **Animações Físicas Realistas**: Transições suaves baseadas em molas de amortecimento que evitam "pulos" visuais na tela.
-- **Carrossel Infinito Nativo**: Animação contínua de marcas construída diretamente via propriedades do Tailwind, descartando scripts pesados de terceiros.
-- **Lightbox Integrado**: Galeria expandida interativa com suporte a navegação por setas laterais e fechamento simplificado no clique.
+- **Animações Adaptáveis**: Transições suaves que respeitam a configuração de movimento reduzido do dispositivo.
+- **Carrossel de Apoiadores**: Animação contínua em telas maiores e rolagem por toque em telas pequenas, sem dependência de bibliotecas adicionais.
+- **Lightbox Integrado**: Galeria expandida com navegação por botões ou setas do teclado, fechamento por Escape e foco acessível.
 - **Código Modularizado**: Separação clara de responsabilidades por arquivos de componentes, facilitando atualizações futuras na galeria ou nos textos.
 - **Responsividade Avançada**: Layout totalmente adaptado desde telas pequenas de smartphones até grandes monitores desktop.
 

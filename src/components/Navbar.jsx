@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
@@ -12,13 +12,23 @@ export default function Navbar() {
     { name: 'Apoiadores', href: '#apoiadores' },
   ];
 
+  useEffect(() => {
+    if (!isOpen) return undefined;
+
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') setIsOpen(false);
+    };
+
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [isOpen]);
+
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-100">
-      <div className="max-w-6xl mx-auto px-4 h-20 flex justify-between items-center">
-        
-        <a href="#home" className="flex items-center gap-3">
-          <img src="/img/logo.png" alt="Joluna Logo" className="w-12 h-12 object-contain" />
-          <span className="text-xl font-bold text-primary tracking-tight">Projeto Social Joluna</span>
+    <nav aria-label="Navegação principal" className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100">
+      <div className="max-w-6xl mx-auto px-4 h-16 md:h-20 flex justify-between items-center gap-3">
+        <a href="#home" className="flex min-w-0 items-center gap-2 md:gap-3">
+          <img src="/img/logo.png" alt="" className="w-10 h-10 md:w-12 md:h-12 shrink-0 object-contain" />
+          <span className="text-base md:text-xl font-bold text-primary tracking-tight">Projeto Social Joluna</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -32,7 +42,14 @@ export default function Navbar() {
           </a>
         </div>
 
-        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-primary p-2">
+        <button
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
+          aria-expanded={isOpen}
+          aria-controls="mobile-navigation"
+          className="md:hidden shrink-0 text-primary p-2 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -43,7 +60,8 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-20 left-0 w-full bg-white shadow-xl border-b border-slate-100 py-6 px-4 flex flex-col gap-4 md:hidden"
+            id="mobile-navigation"
+            className="absolute top-16 md:top-20 left-0 w-full bg-white shadow-xl border-b border-slate-100 py-4 md:py-6 px-4 flex flex-col gap-3 md:hidden"
           >
             {menuItems.map((item) => (
               <a key={item.name} href={item.href} onClick={() => setIsOpen(false)} className="text-text-dark hover:text-primary text-lg font-medium py-2 border-b border-slate-50">

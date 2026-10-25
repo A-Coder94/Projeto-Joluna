@@ -6,12 +6,17 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
   @apply font-poppins bg-bgLight text-text-dark antialiased overflow-x-hidden;
 }
 
+:focus-visible {
+  outline: 3px solid #ffc926;
+  outline-offset: 3px;
+}
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
@@ -19,4 +24,60 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.partners-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.partners-track,
+.partners-group {
+  display: flex;
+  width: max-content;
+  align-items: center;
+}
+
+.partners-track {
+  animation: partners-scroll 24s linear infinite;
+}
+
+.partners-group {
+  flex: none;
+  justify-content: space-around;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.partner-logo {
+  flex: none;
+}
+
+.partners-viewport:hover .partners-track,
+.partners-viewport:focus-within .partners-track {
+  animation-play-state: paused;
+}
+
+@keyframes partners-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 767px), (prefers-reduced-motion: reduce) {
+  .partners-viewport {
+    overflow-x: auto;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .partners-track {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
